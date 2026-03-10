@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Open App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-itunes-app" content="app-id=1125517808" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+
+    <style>
+      body {
+        background-color: #f1f1f1;
+        font-family: "Maven Pro", sans-serif;
+        text-align: center;
+      }
+      img {
+        border-radius: 26px;
+        box-shadow: 0 0 3px #b8b8b8;
+        margin-top: 15vh;
+        max-width: 100px;
+        width: 100%;
+        height: auto;
+      }
+      .btn {
+        background-color: #00bed5;
+        border: 2px solid #00bed5;
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        max-width: 220px;
+        width: 80%;
+        padding: 12px;
+        cursor: pointer;
+        margin: 5vh auto 0;
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img
+      src="https://www.apptrace.com/api/app/1125517808/artwork_url_512"
+      alt="Adjust Insights"
+    />
+
+    <!-- Button with Universal Link: deep links users with the app installed,
+         sends users without the app to the store via deferred deep linking -->
+    <a id="open" class="btn" data-i18n-key="delay-button-text"
+       href="https://insights.go.link/zalo-flavor-1">
+      Open App
+    </a>
+
+    <script>
+      // ==============================
+      // TRANSLATIONS
+      // ==============================
+      const defaultLocale = "en";
+      const browserLanguage = navigator.language;
+      const locale = browserLanguage?.split("-")[0] ?? defaultLocale;
+
+      const translations = {
+        en: {
+          "delay-button-text": "Open app",
+        },
+        de: {
+          "delay-button-text": "App öffnen",
+        },
+        ko: {
+          "delay-button-text": "앱 실행",
+        },
+        zh: {
+          "delay-button-text": "打开应用",
+        },
+        fr: {
+          "delay-button-text": "Ouvrir l'application",
+        },
+        ja: {
+          "delay-button-text": "アプリを開く",
+        },
+        pt: {
+          "delay-button-text": "Abrir aplicativo",
+        },
+        ru: {
+          "delay-button-text": "Открыть приложение",
+        },
+        es: {
+          "delay-button-text": "Abrir la aplicación",
+        },
+        tr: {
+          "delay-button-text": "Uygulamayı aç",
+        },
+        vi: {
+          "delay-button-text": "Mở ứng dụng",
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("[data-i18n-key]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-key");
+          const lang = translations[locale] || translations[defaultLocale];
+          if (lang[key]) el.innerText = lang[key];
+        });
+      });
+    </script>
+  </body>
+</html>

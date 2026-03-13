@@ -1,198 +1,189 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Open App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="apple-itunes-app" content="app-id=1125517808" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Open App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-itunes-app" content="app-id=1125517808" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
 
-    <style>
-      body {
-        background-color: #f1f1f1;
-        font-family: "Maven Pro", sans-serif;
-        text-align: center;
-      }
-      img {
-        border-radius: 26px;
-        box-shadow: 0 0 3px #b8b8b8;
-        margin-top: 15vh;
-        max-width: 100px;
-        width: 100%;
-        height: auto;
-      }
-      h1 {
-        color: #575757;
-        font-size: 1.2em;
-        margin-bottom: 5vh;
-      }
-      .btn {
-        background-color: #00bed5;
-        border: 2px solid #00bed5;
-        color: #fff;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        max-width: 220px;
-        width: 80%;
-        padding: 12px;
-        cursor: pointer;
-        margin: 5vh auto 0;
-        display: block;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
-      p {
-        color: #b8b8b8;
-        margin-top: 5vh;
-        padding: 0 20px;
-      }
-    </style>
-  </head>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: "Maven Pro", sans-serif;
+      text-align: center;
+    }
+    img {
+      border-radius: 26px;
+      box-shadow: 0 0 3px #b8b8b8;
+      margin-top: 15vh;
+      max-width: 100px;
+      width: 100%;
+      height: auto;
+    }
+    h1 {
+      color: #575757;
+      font-size: 1.2em;
+      margin-bottom: 5vh;
+    }
+    .btn {
+      background-color: #00bed5;
+      border: 2px solid #00bed5;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      max-width: 220px;
+      width: 80%;
+      padding: 12px;
+      cursor: pointer;
+      margin: 5vh auto 0;
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    p {
+      color: #b8b8b8;
+      margin-top: 5vh;
+      padding: 0 20px;
+    }
+  </style>
+</head>
 
-  <body>
-    <img
-      src="https://www.apptrace.com/api/app/1125517808/artwork_url_512"
-      alt="Adjust Insights"
-    />
+<body>
+<img
+        src="https://www.apptrace.com/api/app/1125517808/artwork_url_512"
+        alt="Adjust Insights"
+/>
 
-    <h1 data-i18n-key="processing-text">Redirecting you to...</h1>
+<h1 data-i18n-key="processing-text">Redirecting you to...</h1>
 
-    <!-- Button with Universal Link: fallback if auto-redirect and App Store prompt both fail -->
-    <a id="open" class="btn" data-i18n-key="delay-button-text"
-       href="https://insights.go.link/zalo-flavor-2?to_store=true">
-      Open App
-    </a>
+<!-- Button with Universal Link: fallback if auto-redirect and App Store prompt both fail -->
+<a id="open" class="btn" data-i18n-key="delay-button-text"
+   href="https://insights.go.link/zalo-flavor-2?to_store=true">
+  Open App
+</a>
 
-    <p data-i18n-key="delay-text">Taking too long?</p>
+<p data-i18n-key="delay-text">Taking too long?</p>
 
-    <script>
-      // ==============================
-      // TRANSLATIONS
-      // ==============================
-      const defaultLocale = "en";
-      const browserLanguage = navigator.language;
-      const locale = browserLanguage?.split("-")[0] ?? defaultLocale;
+<script>
+  // ==============================
+  // TRANSLATIONS
+  // ==============================
+  const defaultLocale = "en";
+  const browserLanguage = navigator.language;
+  const locale = browserLanguage?.split("-")[0] ?? defaultLocale;
 
-      const translations = {
-        en: {
-          "processing-text": "Redirecting you to...",
-          "delay-text": "Taking too long?",
-          "delay-button-text": "Open app",
-        },
-        de: {
-          "processing-text": "Sie werden weitergeleitet zu ...",
-          "delay-text": "Dauert es zu lange?",
-          "delay-button-text": "App öffnen",
-        },
-        ko: {
-          "processing-text": "다음 페이지로 이동 중입니다...",
-          "delay-text": "시간이 너무 오래 걸리나요?",
-          "delay-button-text": "앱 실행",
-        },
-        zh: {
-          "processing-text": "正在将您转到...",
-          "delay-text": "等待时间过长?",
-          "delay-button-text": "打开应用",
-        },
-        fr: {
-          "processing-text": "Nous vous redirigeons vers...",
-          "delay-text": "Cela prend trop de temps ?",
-          "delay-button-text": "Ouvrir l'application",
-        },
-        ja: {
-          "processing-text": "リダイレクト中です",
-          "delay-text": "時間がかかりすぎていますか?",
-          "delay-button-text": "アプリを開く",
-        },
-        pt: {
-          "processing-text": "Você está sendo redirecionado(a) para...",
-          "delay-text": "Está demorando muito?",
-          "delay-button-text": "Abrir aplicativo",
-        },
-        ru: {
-          "processing-text": "Перенаправляем в…",
-          "delay-text": "Слишком долго?",
-          "delay-button-text": "Открыть приложение",
-        },
-        es: {
-          "processing-text": "Redirigiéndote a...",
-          "delay-text": "¿Está tardando demasiado?",
-          "delay-button-text": "Abrir la aplicación",
-        },
-        tr: {
-          "processing-text": "Yönlendiriliyorsunuz...",
-          "delay-text": "Çok mu uzun sürdü?",
-          "delay-button-text": "Uygulamayı aç",
-        },
-        vi: {
-          "processing-text": "Đang chuyển hướng đến...",
-          "delay-text": "Mất quá nhiều thời gian?",
-          "delay-button-text": "Mở ứng dụng",
-        },
-      };
+  const translations = {
+    en: {
+      "processing-text": "Redirecting you to...",
+      "delay-text": "Taking too long?",
+      "delay-button-text": "Open app",
+    },
+    de: {
+      "processing-text": "Sie werden weitergeleitet zu ...",
+      "delay-text": "Dauert es zu lange?",
+      "delay-button-text": "App öffnen",
+    },
+    ko: {
+      "processing-text": "다음 페이지로 이동 중입니다...",
+      "delay-text": "시간이 너무 오래 걸리나요?",
+      "delay-button-text": "앱 실행",
+    },
+    zh: {
+      "processing-text": "正在将您转到...",
+      "delay-text": "等待时间过长?",
+      "delay-button-text": "打开应用",
+    },
+    fr: {
+      "processing-text": "Nous vous redirigeons vers...",
+      "delay-text": "Cela prend trop de temps ?",
+      "delay-button-text": "Ouvrir l'application",
+    },
+    ja: {
+      "processing-text": "リダイレクト中です",
+      "delay-text": "時間がかかりすぎていますか?",
+      "delay-button-text": "アプリを開く",
+    },
+    pt: {
+      "processing-text": "Você está sendo redirecionado(a) para...",
+      "delay-text": "Está demorando muito?",
+      "delay-button-text": "Abrir aplicativo",
+    },
+    ru: {
+      "processing-text": "Перенаправляем в…",
+      "delay-text": "Слишком долго?",
+      "delay-button-text": "Открыть приложение",
+    },
+    es: {
+      "processing-text": "Redirigiéndote a...",
+      "delay-text": "¿Está tardando demasiado?",
+      "delay-button-text": "Abrir la aplicación",
+    },
+    tr: {
+      "processing-text": "Yönlendiriliyorsunuz...",
+      "delay-text": "Çok mu uzun sürdü?",
+      "delay-button-text": "Uygulamayı aç",
+    },
+    vi: {
+      "processing-text": "Đang chuyển hướng đến...",
+      "delay-text": "Mất quá nhiều thời gian?",
+      "delay-button-text": "Mở ứng dụng",
+    },
+  };
 
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("[data-i18n-key]").forEach((el) => {
-          const key = el.getAttribute("data-i18n-key");
-          const lang = translations[locale] || translations[defaultLocale];
-          if (lang[key]) el.innerText = lang[key];
-        });
-      });
-    </script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-i18n-key]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-key");
+      const lang = translations[locale] || translations[defaultLocale];
+      if (lang[key]) el.innerText = lang[key];
+    });
+  });
+</script>
 
-    <script>
-      // ==============================
-      // AGGRESSIVE STRATEGY (Priority 2)
-      // ==============================
-      // 1. Auto-redirect to app via URI scheme (adjust://)
-      // 2. Failover to App Store if app is not installed
-      // 3. Button with Universal Link as final fallback
-      // ==============================
+<script>
+  (function() {
+    const FALLBACK_DELAY = 1500;
 
-      // ==============================
-      // CONFIG
-      // ==============================
-      const URI_SCHEME = "adjust://deeplinktest";
-      const APP_STORE_URL = "https://apps.apple.com/app/id1125517808";
-      const FALLBACK_DELAY = 1500;
+    const urlParams = new URLSearchParams(window.location.search);
+    const adjT = urlParams.get("adj_t");
 
-      // ==============================
-      // APP OPEN DETECTION
-      // ==============================
-      let appOpened = false;
-      let pageHidden = false;
+    const storeUrlParam = urlParams.get("store_url");
+    const storeUrl = storeUrlParam || "https://apps.apple.com/app/id1125517808";
+    if (storeUrl) {
+      const openBtn = document.getElementById("open");
+      const currentUrl = new URL(openBtn.href);
+      currentUrl.searchParams.set("store_url", storeUrl);
+      openBtn.href = currentUrl.toString();
+    }
 
-      const onVisibilityChange = function () {
-        if (document.hidden) {
-          appOpened = true;
-          pageHidden = true;
-        }
-      };
+    let appOpened = false;
+    let pageHidden = false;
 
-      document.addEventListener("visibilitychange", onVisibilityChange);
-      window.addEventListener("pagehide", function () {
+    const onVisibilityChange = function () {
+      if (document.hidden) {
         appOpened = true;
         pageHidden = true;
-      });
+      }
+    };
 
-      // ==============================
-      // AUTOMATIC APP OPEN ATTEMPT
-      // ==============================
-      // Try to open app automatically via URI scheme
-      window.location.replace(URI_SCHEME);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", function () {
+      appOpened = true;
+      pageHidden = true;
+    });
 
-      // ==============================
-      // FAILOVER TO APP STORE
-      // ==============================
-      // If app didn't open, redirect to App Store ("Open in App Store" prompt)
-      setTimeout(function () {
-        document.removeEventListener("visibilitychange", onVisibilityChange);
+    const appLink = `adjust://deeplinktest?adj_t=${adjT}&template=zalo-flavor-2`;
+    window.location.replace(appLink);
 
-        if (!appOpened && !pageHidden) {
-          window.location.replace(APP_STORE_URL);
-        }
-      }, FALLBACK_DELAY);
-    </script>
-  </body>
+    setTimeout(function () {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+
+      if (!appOpened && !pageHidden) {
+        window.location.replace(STORE_URL);
+      }
+    }, FALLBACK_DELAY);
+  })();
+</script>
+</body>
 </html>
